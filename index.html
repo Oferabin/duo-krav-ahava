@@ -63,8 +63,9 @@ nav {
   color: var(--muted); padding: 0 12px;
 }
 .nav-partner {
-  font-size: 13px; font-weight: 700; color: var(--muted);
-  transition: color 0.3s;
+  font-size: 18px; font-weight: 700; color: #fff;
+  letter-spacing: 3px;
+  font-family: var(--font-he);
 }
 .nav-right { display: flex; align-items: center; gap: 6px; }
 .nav-cta {
@@ -719,35 +720,30 @@ footer {
 <nav>
   <div style="display:flex;align-items:center;gap:6px;">
     <span class="nav-logo">BO<span>LD</span></span>
-    <span class="nav-x">×</span>
+    <span class="nav-x">&amp;</span>
     <span class="nav-partner">בידור ישראל</span>
   </div>
-  <a href="#contact" class="nav-cta">בואו נדבר</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg"></div>
-  <div class="hero-badge">
-    <span class="dot"></span>
-    הצעה עסקית · 2026
-  </div>
   <div class="hero-collab">
     <span class="hero-brand">BOLD</span>
-    <span class="hero-collab-x">×</span>
-    <span class="hero-brand" style="direction:rtl;">בידור ישראל</span>
+    <span class="hero-collab-x">&amp;</span>
+    <span class="hero-brand" style="direction:rtl;font-family:var(--font-he);">בידור ישראל</span>
   </div>
   <h1 class="hero-title">דו קרב<br><em>אהבה</em></h1>
   <p class="hero-sub">
-    שעשועון דייטינג שבועי בשידור חי ב-TikTok LIVE.<br>
-    הקהל לא צופה — הוא חלק מהמשחק.
+    שעשועון דייטינג שבועי בשידור חי ב-TikTok LIVE<br>
+    הצופה הוא חלק מהמשחק
   </p>
   <div class="hero-ctas">
     <button class="btn-primary" onclick="openModal('demo')">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M5 5a2 2 0 0 1 3.008-1.728l12 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-      צפו בדמו
+      דמו
     </button>
-    <a href="#concept" class="btn-secondary">גלו את הקונספט</a>
+    <a href="#concept" class="btn-secondary">קונספט</a>
   </div>
   <div class="hero-scroll">
     <div class="scroll-line"></div>
@@ -783,18 +779,19 @@ footer {
     <div class="concept-grid">
       <div class="concept-text fade-in">
         <p class="section-label">הקונספט</p>
-        <h2 class="section-title">שעשועון שהקהל<br>שולט בו</h2>
+        <h2 class="section-title">שעשועון שהצופה<br>שולט בו</h2>
         <p>
-          <strong>רווק ורווקה</strong> מתחרים בשאלות ואתגרים על זוגיות, אופי וחיים.<br>
-          <strong>המנחה</strong> — משפיענית מובילה עם קהל קיים — מנווטת, מקניטה ויוצרת רגעי ויראל בזמן אמת.
+          המתמודדים — <strong>רווק ורווקה</strong> מתחרים בשאלות ואתגרים על זוגיות, אופי וחיים, במטרה לגלות ולהכיר זו את זה.<br>
+          <strong>המנחה</strong> — משפיענית מובילה עם קהל קיים, מנווטת ויוצרת רגעים ויראליים בזמן אמת.
         </p>
         <p>
-          בסוף כל פרק, <strong>הקהל מצביע</strong> — מי "כובש את הלב" זוכה בדייט.
-          מוצר מסחרי משולב בשפה טבעית לחלוטין.
+          <strong>הגולשים</strong> שבמהלך הפרק מצביעים מי מהמתמודדים כובש להם את הלב.
         </p>
         <p>
-          אינטראקטיבי. אנושי. מצחיק. בזמן אמת.<br>
-          הקהל לא צופה — <strong>הוא חלק מהמשחק</strong>.
+          הפרסים — הם מוצר מסחרי תלוי שת"פ
+        </p>
+        <p>
+          השעשועון — אינטראקטיבי. מצחיק. אנושי.
         </p>
         <div class="concept-tags">
           <span class="tag">TikTok LIVE</span>
@@ -861,23 +858,20 @@ footer {
 <section style="padding:100px 24px; text-align:center; background: var(--surface);">
   <div style="max-width:1160px;margin:0 auto;">
     <p class="section-label fade-in">למה עכשיו</p>
-    <h2 class="section-title fade-in">הקהל מחפש בדיוק את זה</h2>
-    <p class="section-sub fade-in">דור Z צורך תוכן דייטינג ורגשי בכמויות — אבל דוחה פרסומות מסורתיות. הפורמט שלנו מחבר ביניהם.</p>
+    <h2 class="section-title fade-in">הקהל</h2>
+    <p class="section-sub fade-in">דור ה Z, שצורך תוכן דייטינג ורגשי בכמויות, אבל דוחה פרסומות מסורתיות</p>
     <div class="genz-grid">
       <div class="genz-card fade-in">
         <div class="genz-num">3×</div>
-        <div class="genz-label">יותר מעורבות בשידורים חיים</div>
-        <p class="genz-desc">מול תוכן מוקלט — הקהל חוזר ונשאר. כי הוא חלק מהתוצאה.</p>
+        <div class="genz-label">מעורבות בשידורים חיים</div>
       </div>
       <div class="genz-card fade-in">
         <div class="genz-num">#1</div>
         <div class="genz-label">דייטינג — קטגוריית הTikTok הכי נצפית</div>
-        <p class="genz-desc">תוכן זוגיות ורגש מוביל את צפיות ה-FYP. הפורמט שלנו נמצא בדיוק שם.</p>
       </div>
       <div class="genz-card fade-in">
-        <div class="genz-num">0%</div>
-        <div class="genz-label">פרסומת מסורתית</div>
-        <p class="genz-desc">המוצר / ספונסר משולב בשפה טבעית בתוך הפרק. לא כפרסומת — כחוויה.</p>
+        <div class="genz-num">0</div>
+        <div class="genz-label">פרסומות מסורתיות</div>
       </div>
     </div>
   </div>
@@ -887,9 +881,8 @@ footer {
 <div class="track-record-bg">
   <section id="track-record" style="padding:100px 24px; text-align:center;">
     <div style="max-width:1160px;margin:0 auto;">
-      <p class="section-label fade-in">הניסיון שלנו</p>
-      <h2 class="section-title fade-in">מאות שידורים.<br>פורמטים שבנינו מאפס.</h2>
-      <p class="section-sub fade-in">לא מגיעים לשולחן בלי הוכחות. דוגמאות משידורים חיים שלנו.</p>
+      <p class="section-label fade-in" style="font-size:12px;">דברים שעשינו</p>
+      <h2 class="section-title fade-in">מאות שידורים.<br>פיתוח פורמטים</h2>
 
       <div class="shows-grid">
 
@@ -907,7 +900,7 @@ footer {
           <div class="show-info">
             <span class="show-tag">שידור חי · רשת</span>
             <div class="show-name">המרפסת</div>
-            <p class="show-desc">שידורי LIVE ברשת עם אורחים מהבידור הישראלי. פורמט שבנינו מאפס — תחקיר, הוצאה לפועל, עריכה לאחר.</p>
+            <p class="show-desc">שידורי LIVE ברשת עם אורחים מעולם הבידור הישראלי<br>תחקיר, הוצאה לפועל, עריכה לאחר</p>
           </div>
         </div>
 
@@ -925,7 +918,7 @@ footer {
           <div class="show-info">
             <span class="show-tag">שידור חי · קומדי</span>
             <div class="show-name">Funny Monday Live</div>
-            <p class="show-desc">שו קומדי שבועי בשידור חי עם קהל אינטראקטיבי. בנינו את כל שלב הייצור — סקריפט, סטודיו, שידור ועריכה.</p>
+            <p class="show-desc">פאנל קומי שבועי בשידור חי עם קהל אינטראקטיבי<br>סקריפט, סטודיו, שידור, עריכה</p>
           </div>
         </div>
 
@@ -943,17 +936,12 @@ footer {
           <div class="show-info">
             <span class="show-tag">שידור חי · מוזיקה</span>
             <div class="show-name">אוויראפ לייב</div>
-            <p class="show-desc">שידורי מוזיקה חיים עם אמנים ישראלים. פורמט ייחודי שמחבר בין ביצועים חיים לקהל אינטראקטיבי ברשת.</p>
+            <p class="show-desc">שידורי מוזיקה חיים עם אמנים ישראלים<br>חיבור בין ביצועים חיים לקהל ברשת</p>
           </div>
         </div>
 
       </div>
 
-      <div class="shows-numbers fade-in">
-        <div class="num-pill">מעל <strong>200</strong> שידורים חיים שהפקנו</div>
-        <div class="num-pill">ניסיון עם <strong>חברות גדולות</strong> וגורמי בידור</div>
-        <div class="num-pill">בניית פורמטים <strong>מאפס עד שידור</strong></div>
-      </div>
     </div>
   </section>
 </div>
@@ -963,9 +951,8 @@ footer {
 <!-- PARTNERSHIP -->
 <section id="partnership" style="padding:100px 24px;">
   <div style="max-width:1160px;margin:0 auto;text-align:center;">
-    <p class="section-label fade-in">המשוואה</p>
-    <h2 class="section-title fade-in">שני צדדים.<br>תוצאה אחת.</h2>
-    <p class="section-sub fade-in">לכל צד יש מה וביחד אנחנו יוצרים משהו חדש לגמרי.</p>
+    <p class="section-label fade-in">החיבור</p>
+    <h2 class="section-title fade-in">אתם<br>אנחנו</h2>
 
     <div class="partner-split">
       <!-- בידור ישראל -->
@@ -982,7 +969,7 @@ footer {
           <li><strong>נצפות גבוהה</strong> ואמינות קהל</li>
           <li><strong>הגעה לגורמים מסחריים</strong> וספונסרים</li>
           <li><strong>זהות מותג מבוססת</strong> בעולם הבידור</li>
-          <li><strong>קהילה פעילה</strong> שמעורבת ורוצה תוכן</li>
+          <li><strong>קהילה פעילה</strong> שמעורבת וצורכת תוכן</li>
         </ul>
       </div>
 
@@ -1002,23 +989,13 @@ footer {
           </div>
         </div>
         <ul class="partner-items">
-          <li><strong>200+ שידורים חיים</strong> שהפקנו ממש</li>
-          <li><strong>פיתוח פורמטים</strong> ייחודיים מאפס</li>
-          <li><strong>תחקיר, סקריפט, הוצאה לפועל</strong> ועריכה</li>
-          <li><strong>ניסיון עם ספונסרים</strong> ושילוב מסחרי טבעי</li>
-          <li><strong>AI + יצירתיות</strong> שמייצרת תוכן מהיום למחר</li>
+          <li><strong>200+ שידורים חיים</strong> שהפקנו</li>
+          <li><strong>פיתוח פורמטים</strong> מקוריים מאפס עד שידור</li>
+          <li><strong>תחקיר, סקריפט, הפקה בפועל, עריכה</strong></li>
         </ul>
       </div>
     </div>
 
-    <!-- Result -->
-    <div class="result-card fade-in" style="margin-top:32px;">
-      <div class="result-title"><em>דו קרב אהבה</em> — הפורמט שמוכר</div>
-      <p class="result-desc">
-        שידור חי שבועי ב-TikTok LIVE, עם מנחה ייחודית, קהל שמצביע, ומוצרים מסחריים שמשולבים בתוכן.
-        בידור. רגש. כסף. הכל בפרק אחד.
-      </p>
-    </div>
   </div>
 </section>
 
@@ -1028,8 +1005,7 @@ footer {
 <section style="padding:100px 24px; text-align:center; background: var(--surface);">
   <div style="max-width:1160px;margin:0 auto;">
     <p class="section-label fade-in">מודל מסחרי</p>
-    <h2 class="section-title fade-in">דוגמאות לשותפויות<br>מסחרית</h2>
-    <p class="section-sub fade-in">מספונסר אחד לפרק ועד שותפות עונתית מלאה — כל רמה מתאימה לסוג מותג אחר.</p>
+    <h2 class="section-title fade-in">מודלים מסחריים</h2>
 
     <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:56px;">
 
@@ -1079,22 +1055,22 @@ footer {
 <section style="padding:100px 24px; text-align:center;">
   <div style="max-width:1160px;margin:0 auto;">
     <p class="section-label fade-in">הצעד הבא</p>
-    <h2 class="section-title fade-in">איך ממשיכים<br>מכאן?</h2>
+    <h2 class="section-title fade-in">מה הלאה?</h2>
     <div class="steps-grid">
       <div class="step fade-in">
         <div class="step-num">01</div>
-        <div class="step-title">פגישה בכיף</div>
-        <p class="step-desc">פגישה שנדבר על חזון, מטרות, ציפיות — ללא מחויבות.</p>
+        <div class="step-title">קפה</div>
+        <p class="step-desc">פגישה בנדבר על חזון, מטרות, תאום ציפיות.</p>
       </div>
       <div class="step fade-in">
         <div class="step-num">02</div>
-        <div class="step-title">הפילוט</div>
-        <p class="step-desc">מייצרים פרק אחד ביחד — מנחה, פורמט, ספונסר ראשון. בודקים מה עובד.</p>
+        <div class="step-title">פיילוט</div>
+        <p class="step-desc">הפקת פרק לדוגמה</p>
       </div>
       <div class="step fade-in">
         <div class="step-num">03</div>
         <div class="step-title">עונה ראשונה</div>
-        <p class="step-desc">מתחילים עונה. 8–12 פרקים, ספונסרים, קהל, תוכן שנשאר.</p>
+        <p class="step-desc">הפקת 8–12 פרקים.</p>
       </div>
     </div>
   </div>
@@ -1103,25 +1079,7 @@ footer {
 <!-- CTA -->
 <section id="contact" class="cta-section">
   <div class="cta-bg"></div>
-  <p class="section-label fade-in" style="position:relative;z-index:1;">בואו נייצר משהו ביחד</p>
-  <h2 class="section-title fade-in">מוכנים לקחת<br><em style="font-style:normal;background:linear-gradient(135deg,#FF1F6B,#FF6B35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">את הלב</em>?</h2>
-  <p class="section-sub fade-in">
-    יש לכם את הקהל. יש לנו את הפורמט. ביחד אנחנו יכולים לבנות משהו שישראל תדבר עליו.
-  </p>
-  <div class="cta-buttons fade-in">
-    <a href="mailto:oferabin@gmail.com" class="btn-primary">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
-      שלחו מייל
-    </a>
-    <button class="btn-secondary" onclick="openModal('demo')">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M5 5a2 2 0 0 1 3.008-1.728l12 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg>
-      צפו בדמו ב-YouTube
-    </button>
-  </div>
-  <p class="cta-contact">
-    מעדיפים לדבר? <a href="tel:+972">צרו קשר ישיר</a> ·
-    <a href="https://www.instagram.com/israel_bidur/" target="_blank" rel="noopener">@israel_bidur</a>
-  </p>
+  <h2 class="section-title fade-in" style="color:#fff;position:relative;z-index:1;">תודה</h2>
 </section>
 
 <!-- FOOTER -->
