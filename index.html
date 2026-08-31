@@ -136,6 +136,11 @@ nav {
   color: rgba(255,255,255,0.2);
   font-family: var(--font-en);
 }
+.hero-mako-img {
+  height: clamp(34px, 6.2vw, 58px);
+  width: auto; display: inline-block;
+  vertical-align: middle;
+}
 
 .hero-title {
   font-size: clamp(72px, 13vw, 140px);
@@ -736,9 +741,10 @@ footer {
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="hero-collab">
-    <span class="hero-brand">BOLD</span>
+    <img src="MAKO.png" alt="mako" class="hero-mako-img">
+
     <span class="hero-collab-x">&amp;</span>
-    <span class="hero-brand" style="direction:rtl;font-family:var(--font-he);">מאקו</span>
+    <span class="hero-brand">BOLD</span>
   </div>
   <h1 class="hero-title">דו קרב<br><em>אהבה</em></h1>
   <p class="hero-sub">
@@ -788,7 +794,9 @@ footer {
         <p class="section-label">הקונספט</p>
         <h2 class="section-title">שעשועון בשליטת הצופים</h2>
         <p>
-          <strong>המתמודדים</strong> — רווק ורווקה מתחרים בשאלות ואתגרים על זוגיות, אופי וחיים, במטרה לגלות ולהכיר זו את זה.<br>
+          <strong>המתמודדים</strong> — רווק ורווקה מתחרים בשאלות ואתגרים על זוגיות, אופי וחיים, במטרה לגלות ולהכיר זו את זה.
+        </p>
+        <p>
           <strong>המנחה</strong> — משפיענית מובילה עם קהל קיים, מנווטת ויוצרת רגעים ויראליים בזמן אמת.
         </p>
         <p>
@@ -965,9 +973,8 @@ footer {
       <!-- מאקו -->
       <div class="partner-card bidur fade-in">
         <div class="partner-logo-row">
-          <div class="partner-icon">🎭</div>
           <div>
-            <div class="partner-name">מאקו</div>
+            <img src="MAKO.png" alt="mako" style="height:40px;width:auto;display:block;margin-bottom:6px;">
             <div class="partner-handle">mako.co.il</div>
           </div>
         </div>
@@ -975,7 +982,7 @@ footer {
           <li><strong>קהל עצום</strong> ב-Instagram ו-TikTok</li>
           <li><strong>נצפות גבוהה</strong> ואמינות קהל</li>
           <li><strong>הגעה לגורמים מסחריים</strong> וספונסרים</li>
-          <li><strong>זהות מותג מבוססת</strong> בעולם הבידור</li>
+          <li><strong>זהות מותג מבוססת</strong> בעולם התרבות והבידור</li>
           <li><strong>קהילה פעילה</strong> שמעורבת וצורכת תוכן</li>
         </ul>
       </div>
@@ -985,7 +992,6 @@ footer {
       <!-- BOLD -->
       <div class="partner-card bold fade-in">
         <div class="partner-logo-row">
-          <div class="partner-icon" style="font-family:'Space Grotesk',sans-serif;font-weight:900;font-size:16px;color:#FF1F6B;">B</div>
           <div>
             <div class="partner-name">BOLD</div>
             <div class="partner-handle">content production house</div>
@@ -1004,55 +1010,6 @@ footer {
 
 <div class="divider"></div>
 
-<!-- COMMERCIAL MODEL -->
-<section style="padding:100px 24px; text-align:center; background: var(--surface);">
-  <div style="max-width:1160px;margin:0 auto;">
-    <p class="section-label fade-in">מודל מסחרי</p>
-    <h2 class="section-title fade-in">חבילות</h2>
-
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:56px;">
-
-      <div class="pillar fade-in" style="text-align:right;">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-          <span style="font-size:20px;">⚡</span>
-          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;">BASIC</span>
-        </div>
-        <div class="pillar-title">חבילת אתגר</div>
-        <p class="pillar-desc">אזכור + אתגר קצר מותאם למותג בתוך הפרק + קליפי שיא לאחר. אינטגרציה קלה ומהירה.</p>
-      </div>
-
-      <div class="pillar fade-in" style="text-align:right;border-color:rgba(245,166,35,0.2);">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-          <span style="font-size:20px;">🎁</span>
-          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:2px;color:var(--gold);text-transform:uppercase;">PARTNER</span>
-        </div>
-        <div class="pillar-title" style="color:var(--gold);">חבילת פרס</div>
-        <p class="pillar-desc">המותג נותן את פרס הדייט + אזכור חוזר בכל הפרק + פרק המשך שמספר את הסיפור.</p>
-      </div>
-
-      <div class="pillar fade-in" style="text-align:right;border-color:rgba(255,31,107,0.2);">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-          <span style="font-size:20px;">🎬</span>
-          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:2px;color:var(--pink);text-transform:uppercase;">FEATURED</span>
-        </div>
-        <div class="pillar-title" style="color:var(--pink);">פרק מלא</div>
-        <p class="pillar-desc">שותף מרכזי לפרק — פתיחה + מהלך + סיום + אתגר מרכזי + גרפיקה + קריאייטיב מלא.</p>
-      </div>
-
-      <div class="pillar fade-in" style="text-align:right;border-color:rgba(138,43,226,0.3);background:rgba(138,43,226,0.05);">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
-          <span style="font-size:20px;">👑</span>
-          <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;letter-spacing:2px;color:#8a2be2;text-transform:uppercase;">PREMIUM</span>
-        </div>
-        <div class="pillar-title" style="color:#8a2be2;">שותפות עונתית</div>
-        <p class="pillar-desc">נוכחות רציפה לאורך כל העונה — עיצוב קבוע, קריאייטיב מתמשך, שימוש חופשי בתכני העונה.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
 
 <!-- NEXT STEPS -->
 <section style="padding:100px 24px; text-align:center;">
