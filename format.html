@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>דו קרב אהבה — הפורמט</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Assistant:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+:root{
+  --bg:#F7F3F5; --surface:#FFFFFF; --surface-2:#FBF7F9;
+  --ink:#1C1519; --muted:#6E6470; --faint:#9A8F98;
+  --line:rgba(28,21,25,0.12); --line-soft:rgba(28,21,25,0.06);
+  --heart:#E11667; --heart-2:#FF5C93; --heart-soft:rgba(225,22,103,0.10);
+  --yes:#0E6B4E; --yes-soft:rgba(14,107,78,0.11);
+  --no:#8A8290; --no-soft:rgba(138,130,144,0.12);
+  --gold:#9C6B12; --gold-soft:rgba(156,107,18,0.12);
+  --shadow:0 1px 2px rgba(28,21,25,.05),0 10px 30px rgba(28,21,25,.07);
+  --serif:'Frank Ruhl Libre','Georgia',serif;
+  --sans:'Assistant','Segoe UI',sans-serif;
+  --mono:'Space Grotesk','Assistant',sans-serif;
+}
+:root:not([data-theme="light"]){ @media (prefers-color-scheme:dark){
+  --bg:#0F0A0E; --surface:#1A131A; --surface-2:#201823;
+  --ink:#F3ECF0; --muted:#A99EAA; --faint:#6F6470;
+  --line:rgba(255,255,255,0.12); --line-soft:rgba(255,255,255,0.06);
+  --heart:#FF4E8E; --heart-2:#FF87B2; --heart-soft:rgba(255,78,142,0.15);
+  --yes:#3FD39B; --yes-soft:rgba(63,211,155,0.13);
+  --no:#8E8598; --no-soft:rgba(142,133,152,0.16);
+  --gold:#E2A63E; --gold-soft:rgba(226,166,62,0.14);
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 36px rgba(0,0,0,.45);
+}}
+:root[data-theme="dark"]{
+  --bg:#0F0A0E; --surface:#1A131A; --surface-2:#201823;
+  --ink:#F3ECF0; --muted:#A99EAA; --faint:#6F6470;
+  --line:rgba(255,255,255,0.12); --line-soft:rgba(255,255,255,0.06);
+  --heart:#FF4E8E; --heart-2:#FF87B2; --heart-soft:rgba(255,78,142,0.15);
+  --yes:#3FD39B; --yes-soft:rgba(63,211,155,0.13);
+  --no:#8E8598; --no-soft:rgba(142,133,152,0.16);
+  --gold:#E2A63E; --gold-soft:rgba(226,166,62,0.14);
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 12px 36px rgba(0,0,0,.45);
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important;}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); line-height:1.6; direction:rtl; -webkit-font-smoothing:antialiased;}
+img{max-width:100%}
+.wrap{max-width:860px; margin:0 auto; padding:clamp(20px,4vw,52px) clamp(16px,4vw,38px) 60px;}
+h1,h2,h3{font-family:var(--serif); font-weight:700; margin:0; line-height:1.2; text-wrap:balance;}
+p{margin:0}
+.mono{font-family:var(--mono); font-variant-numeric:tabular-nums;}
+
+/* ===== Password gate ===== */
+#gate{position:fixed; inset:0; z-index:100; background:var(--bg); display:flex; align-items:center; justify-content:center; padding:24px;}
+.gate-card{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:clamp(30px,5vw,44px) clamp(24px,4vw,40px); max-width:430px; width:100%; text-align:center; box-shadow:var(--shadow);}
+.gate-card .g-eyebrow{font-family:var(--mono); letter-spacing:.22em; text-transform:uppercase; font-size:12px; color:var(--heart); font-weight:700;}
+.gate-card .g-heart{font-size:34px; margin-bottom:6px;}
+.gate-card h1{font-family:var(--serif); font-size:clamp(26px,5vw,32px); font-weight:900; margin:8px 0 6px;}
+.gate-card .g-sub{color:var(--muted); font-size:14px; margin-bottom:24px;}
+.gate-form{display:flex; gap:10px;}
+#code{flex:1; padding:14px 16px; border-radius:13px; border:1px solid var(--line); background:var(--bg); color:var(--ink); font-family:var(--mono); font-size:17px; letter-spacing:3px; text-align:center; outline:none; text-transform:uppercase;}
+#code:focus{border-color:var(--heart); box-shadow:0 0 0 3px var(--heart-soft);}
+.gate-btn{padding:14px 26px; border-radius:13px; border:none; background:var(--heart); color:#fff; font-family:var(--sans); font-weight:700; font-size:15px; cursor:pointer; transition:transform .15s;}
+.gate-btn:hover{transform:translateY(-1px);}
+.gate-err{color:var(--heart); font-size:13px; margin-top:14px; font-weight:700; min-height:18px;}
+.shake{animation:shake .45s;}
+@keyframes shake{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-8px)}40%,60%{transform:translateX(8px)}}
+
+.mast{display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; padding-bottom:20px; border-bottom:1.5px solid var(--line);}
+.brand{font-family:var(--mono); font-weight:700; letter-spacing:.12em; font-size:14px;}
+.brand .k{color:var(--heart);}
+.mast .tiny{font-family:var(--mono); font-size:11px; letter-spacing:.06em; color:var(--faint); text-transform:uppercase;}
+
+.page-hero{margin-top:26px; text-align:center;}
+.page-hero .eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:var(--heart); font-weight:700;}
+.page-hero h1{font-size:clamp(32px,6.5vw,52px); font-weight:900; margin-top:8px;}
+.page-hero h1 em{font-style:normal; color:var(--heart);}
+.page-hero .prem{color:var(--muted); font-size:clamp(15px,2.2vw,18px); max-width:60ch; margin:14px auto 0;}
+
+section{margin-top:44px;}
+.sec-head{display:flex; align-items:baseline; gap:12px; margin-bottom:20px;}
+.sec-head .n{font-family:var(--mono); font-size:13px; font-weight:700; color:var(--heart);}
+.sec-head h2{font-size:clamp(20px,3vw,27px); font-weight:900;}
+
+.meter{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:22px 24px; box-shadow:var(--shadow);}
+.meter-top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:12px; font-weight:700;}
+.meter-top .lbl{font-size:15px; display:flex; align-items:center; gap:7px;}
+.meter-top .val{font-family:var(--mono); font-size:15px; color:var(--heart);}
+.meter-top .val small{color:var(--faint); font-weight:600; font-size:11px;}
+.meter-track{position:relative; height:30px; background:var(--heart-soft); border-radius:999px; overflow:hidden;}
+.meter-fill{height:100%; width:84%; border-radius:999px; background:linear-gradient(90deg,var(--heart),var(--heart-2)); display:flex; align-items:center; justify-content:flex-start; padding-inline-start:12px; color:#fff; font-size:13px; letter-spacing:2px;}
+.meter-flag{margin-top:10px; text-align:left; font-family:var(--mono); font-size:12px; font-weight:700; color:var(--muted);}
+.meter-flag b{color:var(--ink);}
+
+.loop{display:flex; flex-direction:column; gap:12px;}
+.beat{display:grid; grid-template-columns:auto 1fr; gap:16px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:16px 18px; align-items:start;}
+.beat .b-n{width:34px; height:34px; border-radius:10px; background:var(--heart-soft); color:var(--heart); font-family:var(--serif); font-weight:900; font-size:18px; display:grid; place-items:center;}
+.beat h3{font-size:17px; margin-bottom:3px;}
+.beat p{color:var(--muted); font-size:14px;}
+.beat .tag{font-family:var(--mono); font-size:10.5px; font-weight:700; letter-spacing:.05em; color:var(--heart); text-transform:uppercase; margin-top:6px; display:inline-block;}
+
+.gates{display:flex; flex-direction:column; gap:0;}
+.gate{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:18px 20px; box-shadow:var(--shadow);}
+.gate .q{display:flex; align-items:center; gap:10px; font-family:var(--serif); font-weight:700; font-size:18px;}
+.gate .q .badge{font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.05em; color:var(--heart); background:var(--heart-soft); padding:3px 9px; border-radius:999px; white-space:nowrap;}
+.branch{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px;}
+.arm{border-radius:12px; padding:14px 16px; border:1px solid var(--line);}
+.arm .h{font-family:var(--mono); font-weight:700; font-size:13px; display:flex; align-items:center; gap:7px; margin-bottom:5px;}
+.arm .d{font-size:13.5px; color:var(--muted);}
+.arm.no{background:var(--no-soft);} .arm.no .h{color:var(--no);}
+.arm.yes{background:var(--yes-soft);} .arm.yes .h{color:var(--yes);}
+.connector{width:2px; height:22px; background:var(--line); margin:0 auto;}
+.connector.tinted{background:linear-gradient(var(--yes),var(--yes));}
+
+.outs{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+.out{border-radius:14px; padding:18px; text-align:center; border:1px solid var(--line);}
+.out .ico{font-size:26px;}
+.out h3{font-size:16px; margin:8px 0 4px;}
+.out p{font-size:12.5px; color:var(--muted);}
+.out.dead{background:var(--surface);}
+.out.win{background:var(--yes-soft); border-color:var(--yes);}
+.out.win h3{color:var(--yes);}
+
+.why{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+.wcard{background:var(--surface); border:1px solid var(--line); border-radius:13px; padding:17px 19px; border-inline-start:4px solid var(--heart);}
+.wcard h3{font-size:15.5px; margin-bottom:5px;}
+.wcard p{font-size:13.5px; color:var(--muted);}
+.wcard .en{font-family:var(--mono); direction:ltr; unicode-bidi:isolate; display:inline-block; font-weight:700; color:var(--heart); font-size:12px;}
+
+.mladder{display:flex; flex-direction:column; gap:10px;}
+.mstep{display:grid; grid-template-columns:auto 1fr auto; gap:14px; align-items:center; background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:14px 16px;}
+.mstep .mi{font-size:22px;}
+.mstep .mt{font-weight:700; font-size:15px;}
+.mstep .mt small{display:block; font-weight:600; color:var(--muted); font-size:12.5px; margin-top:2px;}
+.mstep .str{font-family:var(--mono); font-size:10.5px; font-weight:700; padding:4px 10px; border-radius:999px; white-space:nowrap;}
+.str.s1{background:var(--no-soft); color:var(--no);}
+.str.s2{background:var(--gold-soft); color:var(--gold);}
+.str.s3{background:var(--heart-soft); color:var(--heart);}
+.str.s4{background:var(--yes-soft); color:var(--yes);}
+
+footer{margin-top:46px; padding-top:20px; border-top:1.5px solid var(--line); display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; align-items:center;}
+footer .note{font-size:12px; color:var(--faint); max-width:54ch;}
+footer .sig{font-family:var(--mono); font-weight:700; letter-spacing:.1em; font-size:13px; color:var(--muted);}
+footer .sig b{color:var(--heart);}
+
+@media(max-width:600px){
+  .branch,.why{grid-template-columns:1fr;}
+  .outs{grid-template-columns:1fr;}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div id="gate">
+  <div class="gate-card">
+    <div class="g-heart">💗</div>
+    <div class="g-eyebrow">BOLD · דו קרב אהבה</div>
+    <h1>הפורמט</h1>
+    <p class="g-sub">הזן קוד גישה כדי לצפות במנגנון המשחק.</p>
+    <form class="gate-form" id="gate-form" autocomplete="off">
+      <input id="code" type="text" inputmode="text" placeholder="קוד גישה" aria-label="קוד גישה" maxlength="12" autofocus>
+      <button class="gate-btn" type="submit">כניסה</button>
+    </form>
+    <div class="gate-err" id="gate-err" role="alert"></div>
+  </div>
+</div>
+
+<!-- CONTENT (locked) -->
+<div class="wrap" id="content" hidden>
+
+  <header class="mast">
+    <div class="brand">BO<span class="k">LD</span> · דו קרב אהבה</div>
+    <div class="tiny">מנגנון המשחק</div>
+  </header>
+
+  <div class="page-hero">
+    <div class="eyebrow">הפורמט</div>
+    <h1>הקהל שולח <em>לבבות</em>.<br>הזוג מחליט.</h1>
+    <p class="prem">שעשועון דייטינג ב-TikTok LIVE שבו <b>הצופים הם המנוע</b>: הם מזרימים לבבות כל השידור כדי לשלוח את הזוג לדייט — אבל הדייט קורה רק אם גם שני המתמודדים אומרים "כן".</p>
+  </div>
+
+  <section>
+    <div class="sec-head"><span class="n">01</span><h2>הלולאה — איך משחקים</h2></div>
+    <div class="loop">
+      <div class="beat"><div class="b-n">1</div><div><h3>המנחה מכריזה על היעד</h3><p>בפתיחת הפרק המנחה קובעת כמה לבבות צריך הקהל לצבור כדי לשלוח את הזוג לדייט.</p><span class="tag">מציב מתח מהשנייה הראשונה</span></div></div>
+      <div class="beat"><div class="b-n">2</div><div><h3>הצופים מזרימים לבבות</h3><p>לאורך כל השידור הקהל שולח לבבות בזמן אמת. מד-לבבות חי על המסך מתמלא — כל אחד רואה כמה חסר.</p><span class="tag">engagement חי ומדיד</span></div></div>
+      <div class="beat"><div class="b-n">3</div><div><h3>שער הקהל: הגענו ליעד?</h3><p>בסוף הפרק בודקים אם הקהל עמד ביעד הלבבות. זה השער הראשון — כוח הקהל.</p><span class="tag">שער 1</span></div></div>
+      <div class="beat"><div class="b-n">4</div><div><h3>שער הזוג: אתם בעניין?</h3><p>אם עמדו ביעד — כל מתמודד נשאל אם הוא בעניין, ומצביע <b>בו-זמנית</b> לייק/דיסלייק (גרפיקה + שלט).</p><span class="tag">שער 2 · רגע השיא</span></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="n">02</span><h2>מד הלבבות</h2></div>
+    <div class="meter">
+      <div class="meter-top"><span class="lbl">💗 לבבות הקהל</span><span class="val">8,400 / 10,000 <small>(דוגמה)</small></span></div>
+      <div class="meter-track"><div class="meter-fill">💗 💗 💗 💗 💗</div></div>
+      <div class="meter-flag">🏁 יעד: <b>10,000 לבבות</b> — נקבע ע"י המנחה בפתיחה · 84% — הקהל כמעט שם</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="n">03</span><h2>מנגנון ההכרעה — 2 שערים, 3 תוצאות</h2></div>
+    <div class="gates">
+      <div class="gate">
+        <div class="q"><span class="badge">שער 1 · הקהל</span> הגיעו ליעד הלבבות?</div>
+        <div class="branch">
+          <div class="arm no"><div class="h">✗ לא</div><div class="d">הקהל לא צבר מספיק — אין דייט. הפרק נגמר בדרמה.</div></div>
+          <div class="arm yes"><div class="h">✓ כן</div><div class="d">כוח הקהל הצליח — עוברים לשער השני.</div></div>
+        </div>
+      </div>
+      <div class="connector tinted"></div>
+      <div class="gate">
+        <div class="q"><span class="badge">שער 2 · הזוג</span> שני המתמודדים בעניין? <span style="font-weight:400;color:var(--muted);font-size:14px">(הצבעה בו-זמנית)</span></div>
+        <div class="branch">
+          <div class="arm no"><div class="h">✗ לא (אחד או שניהם דיסלייק)</div><div class="d">אין דייט, אין פרס. רגע אנושי אמיתי.</div></div>
+          <div class="arm yes"><div class="h">✓ כן — שניהם לייק</div><div class="d">יוצאים לדייט וזוכים בפרס! 🎉</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="outs" style="margin-top:18px;">
+      <div class="out dead"><div class="ico">🚫</div><h3>הקהל לא הגיע ליעד</h3><p>אין דייט</p></div>
+      <div class="out dead"><div class="ico">💔</div><h3>הגיעו ליעד · לא שניהם בעניין</h3><p>אין דייט · אין פרס</p></div>
+      <div class="out win"><div class="ico">💗🎉</div><h3>הגיעו ליעד · שניהם בעניין</h3><p>דייט + פרס!</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="n">04</span><h2>למה זה עובד</h2></div>
+    <div class="why">
+      <div class="wcard"><h3>💗 הקהל הוא המנוע</h3><p>הלבבות = <span class="en">engagement</span> חי. הקהל חייב להישאר ולפעול — לא צופה, משתתף.</p></div>
+      <div class="wcard"><h3>🎯 היעד = מתח</h3><p>מד שמתמלא נותן סיבה לא לעזוב עד השנייה האחרונה. <span class="en">retention</span>.</p></div>
+      <div class="wcard"><h3>🗳️ הצבעה כפולה = רגע ויראלי</h3><p>ה"כן/לא" הבו-זמני הוא רגע שיא רגשי, בלתי-צפוי ושיתופי — דלק לקליפים.</p></div>
+      <div class="wcard"><h3>🎁 הפרס = אינטגרציית מותג</h3><p>המפרסם נותן את הדייט/הפרס — נכנס לתוך רגע השיא, לא כפרסומת.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="n">05</span><h2>שכבת המדידה — ממעורבות לכוונה</h2></div>
+    <p style="color:var(--muted); font-size:14.5px; margin-bottom:18px;"><b style="color:var(--ink)">אנחנו מודדים בשתי רמות — מעורבות הקהל, וכוונה כלפי המותג.</b> הלבבות מראים כמה הקהל מחובר; פעולה ממותגת שאנחנו מתכננים בתוך הפרק מראה את הכוונה כלפי המוצר. סולם, מרך לחזק:</p>
+    <div class="mladder">
+      <div class="mstep"><span class="mi">💗</span><div class="mt">לבבות הקהל<small>מודד: אוהבים את השידור</small></div><span class="str s1">רך · קהל</span></div>
+      <div class="mstep"><span class="mi">🗳️</span><div class="mt">הצבעה על המוצר<small>"איזה טעם של X יהיה הפרס?" · מודד: התעניינות במוצר</small></div><span class="str s2">בינוני</span></div>
+      <div class="mstep"><span class="mi">🔗</span><div class="mt">קוד / לינק בלייב<small>"קוד LOVE ל-20% הנחה" · מודד: כוונת-קנייה</small></div><span class="str s3">חזק</span></div>
+      <div class="mstep"><span class="mi">🛒</span><div class="mt">מימוש קוד / קנייה<small>כמה באמת קנו · מודד: קנייה בפועל</small></div><span class="str s4">הכי חזק</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="note">מנגנון המשחק של "דו קרב אהבה" · המספרים להמחשה בלבד. יעד הלבבות מכויל לגודל הקהל בפועל.</p>
+    <div class="sig"><b>BOLD</b> — content production</div>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var CODE = "LOVE";
+  var gate = document.getElementById('gate'),
+      content = document.getElementById('content'),
+      input = document.getElementById('code'),
+      err = document.getElementById('gate-err'),
+      form = document.getElementById('gate-form'),
+      card = gate.querySelector('.gate-card');
+  function unlock(){
+    gate.hidden = true;
+    content.hidden = false;
+    try { sessionStorage.setItem('dka_format_ok','1'); } catch(e){}
+  }
+  try { if (sessionStorage.getItem('dka_format_ok') === '1') unlock(); } catch(e){}
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var v = (input.value || '').trim().toUpperCase();
+    if (v === CODE){ err.textContent=''; unlock(); }
+    else {
+      err.textContent = 'קוד שגוי, נסו שוב';
+      card.classList.remove('shake'); void card.offsetWidth; card.classList.add('shake');
+      input.select();
+    }
+  });
+  input.focus();
+})();
+</script>
+</body>
+</html>
